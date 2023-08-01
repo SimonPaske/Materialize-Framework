@@ -21,13 +21,14 @@
                 <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
             {% endif %}
         </div>
+        {% if category.owner == session.user %}
         <div class="collapsible-body">
             <strong>{{ task.category }}</strong>
             <p>{{ task.task_description }}</p>
-            <p>
                 <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn green accent-4">Edit</a>
-            </p>
+                <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn red">Delete</a>
         </div>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
