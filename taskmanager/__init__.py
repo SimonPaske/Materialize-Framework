@@ -11,7 +11,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 if os.environ.get("DEVELOPMENT") == "True":
      app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
- else:
+else:
      app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 
 db = SQLAlchemy(app)
