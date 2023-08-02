@@ -8,7 +8,6 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 if os.environ.get("DEVELOPMENT") == "True":
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")  # local
@@ -20,9 +19,4 @@ else:
 
 db = SQLAlchemy(app)
 
-<<<<<<< HEAD
 from taskmanager import routes  # noqa
-=======
-db = SQLAlchemy(app)
-from taskmanager import routes  # noqa
->>>>>>> f4d26cabc0a8acb4188bda70df018ced57275c44
